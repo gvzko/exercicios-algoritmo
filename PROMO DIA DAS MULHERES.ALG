@@ -6,9 +6,9 @@ Var
 Inicio
    EscrevaL ( "Olá seja bem-vindo(a)! Qual o seu nome? ")
    Leia ( N)
-   Escreva ( "Você é homem ou mulher? ")
-   Leia ( S)
-   Enquanto ( SN <> 1, 2) faca
+   Enquanto ( SN <> 1) e (SN <> 2) faça
+      Escreva ( "Você é homem ou mulher? ")
+      Leia ( S)
       Se (S = "homem") entao
          SN <- 1
       Senao
@@ -20,12 +20,20 @@ Inicio
       Fimse
       Escolha (SN)
       Caso 1
-         Escreva ( "Você tem direito a 5% de desconto!")
+         Escreval ( "Você tem direito a 5% de desconto!")
       Caso 2
-         Escreva ("Hoje é seu dia e você tem direito a 13% de desconto!")
+         Escreval ("Hoje é seu dia e você tem direito a 13% de desconto!")
       OutroCaso
-         Escreva ("Desculpe, eu não entendi. pode repetir?")
-
+         EscrevaL ("Desculpe, eu não entendi. pode repetir?")
       FimEscolha
    FimEnquanto
+   Escreva ("Qual o valor total das suas compras?")
+   Leia ( VAL)
+   Se (S = "Homem") entao
+     VAL <- VAL - (5 * VAL / 100)
+     EscrevaL ("Suas compras com desconto ficam no total de:", VAL)
+   Senao
+        VAL <- VAL - (13 * VAL / 100)
+        EscrevaL ("Suas compras com desconto ficam no total de:", VAL)
+   FimSe
 Fimalgoritmo
